@@ -1,0 +1,130 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default fonts */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #0ea5e9; /* default blue */
+  --accent-hover: #0284c7;
+  --accent-text-on: #ffffff;
+}
+
+/* USER LIGHT (blue) */
+[data-theme="user-light"] {
+  --bg: #f0f9ff;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-text-on: #ffffff;
+}
+
+/* USER DARK (blue neon on dark) */
+[data-theme="user-dark"] {
+  --bg: #071130;
+  --card: #071a2a;
+  --text: #e6f6ff;
+  --muted: #93c5fd;
+  --primary: #38bdf8;
+  --accent-hover: #06b6d4;
+  --accent-text-on: #001219;
+}
+
+/* MANAGER LIGHT (lime) */
+[data-theme="manager-light"] {
+  --bg: #f7fff4;
+  --card: #ffffff;
+  --text: #072f1b;
+  --muted: #375a3f;
+  --primary: #84cc16;
+  --accent-hover: #65a30d;
+  --accent-text-on: #05300a;
+}
+
+/* MANAGER DARK (green hacker) */
+[data-theme="manager-dark"] {
+  --bg: #06180a;
+  --card: #09220e;
+  --text: #d9f7d9;
+  --muted: #9be39b;
+  --primary: #7ee787;
+  --accent-hover: #2dd4bf;
+  --accent-text-on: #001f0f;
+}
+
+/* ADMIN LIGHT (red/scarlet) */
+[data-theme="admin-light"] {
+  --bg: #fff7f7;
+  --card: #ffffff;
+  --text: #2b0b0b;
+  --muted: #6b1212;
+  --primary: #ef4444;
+  --accent-hover: #dc2626;
+  --accent-text-on: #ffffff;
+}
+
+/* ADMIN DARK (purple neon) */
+[data-theme="admin-dark"] {
+  --bg: #0b0011;
+  --card: #12021a;
+  --text: #f3e8ff;
+  --muted: #c084fc;
+  --primary: #a78bfa;
+  --accent-hover: #7c3aed;
+  --accent-text-on: #0b0022;
+}
+
+/* Apply variables */
+html, body, #__next {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* A common card style that obeys theme */
+.card {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+/* Primary button that uses theme primary color */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--accent-text-on);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+}
+
+/* Theme toggle appearance */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .35rem .6rem;
+  border-radius: .6rem;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background .12s, color .12s, transform .08s;
+}
+.theme-toggle:hover { transform: translateY(-2px); }
+
+/* small responsive helpers */
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; }

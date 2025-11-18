@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neon & theme system */
+:root {
+  --neon-blue: #00bfff;
+  --neon-green: #00ff99;
+  --neon-red: #ff004c;
+  --neon-purple: #9d00ff;
+
+  --light-bg: #f7f9fb;
+  --dark-bg: #0b0c10;
+}
+
+html[data-role='user'] {
+  --accent: var(--neon-blue);
+}
+
+html[data-role='manager'] {
+  --accent: var(--neon-green);
+}
+
+html[data-role='admin'] {
+  --accent: var(--neon-red);
+}
+
+/* Neon text and button effect */
+.neon {
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent),
+               0 0 10px var(--accent),
+               0 0 20px var(--accent);
+}
+
+.neon-btn {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+/* Dark mode toggle */
+html.dark {
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+html:not(.dark) {
+  background-color: var(--light-bg);
+  color: black;
+}
+
+body {
+  transition: background-color 0.4s, color 0.4s;
+  font-family: 'Poppins', sans-serif;
+}
